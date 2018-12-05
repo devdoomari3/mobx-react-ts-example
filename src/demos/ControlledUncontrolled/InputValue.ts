@@ -1,13 +1,15 @@
 import {
-  observable as mobservable, action,
-} from 'mobx'
+  action, observable,
+} from 'mobx';
 
 export class InputValue {
-  @mobservable value: string;
+  @observable value: string;
   constructor(value: string) {
-    this.value = value
+    this.value = value;
   }
-  @action set(value: string) {
+  @action
+  setValue(value: string) {
     this.value = value;
   }
 }
+

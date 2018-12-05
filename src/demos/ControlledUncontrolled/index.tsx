@@ -1,33 +1,33 @@
-import * as React from 'react'
-import { observable } from 'mobx'
+import { observable } from 'mobx';
 import {
-  observer
-} from 'mobx-react'
-import { SomeInput } from './SomeInput';
+  observer,
+} from 'mobx-react';
+import * as React from 'react';
 import { InputValue } from './InputValue';
-
-export type PropsType = {
-
-}
+import { SomeInput } from './SomeInput';
 
 @observer
-export class ControlledUncontrolledInput extends React.Component<PropsType> {
-  @observable inputValue = new InputValue('aaa')
+export class ControlledUncontrolledDemo extends React.Component<{}> {
+  @observable inputValue = new InputValue('aaa');
   render() {
     return (
       <div>
-        <SomeInput key="1"
-          inputValue={this.inputValue}
-        />
-        <p> input value: {this.inputValue.value} </p>
-        <p> Another input: </p>
-        <SomeInput key="2"
-          inputValue={this.inputValue}
-        />
+        <div>
+          <span> Linked Input 1</span>
+          <SomeInput key='1'
+            inputValue={this.inputValue}
+          />
+        </div>
+        <p> Linked input value: {this.inputValue.value} </p>
+        <div>
+          <span> Linked Input 2</span>
+          <SomeInput key='1'
+            inputValue={this.inputValue}
+          />
+        </div>
         <p> not-linked input: </p>
-        <SomeInput key="3"
-        />
+        <SomeInput key='3' />
       </div>
-    )
+    );
   }
 }

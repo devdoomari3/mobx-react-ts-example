@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from "@storybook/addon-info";
-import { ControlledUncontrolledInput } from '..';
+import * as React from 'react';
+import { ControlledUncontrolledDemo } from '..';
 
 storiesOf('ControlledUncontrolled', module)
   .add(
     'ControlledUncontrolled',
-    withInfo({ inline: true })(() => <ControlledUncontrolledInput />)
-  )
+    withInfo({ inline: true })(() => <ControlledUncontrolledDemo />),
+  );

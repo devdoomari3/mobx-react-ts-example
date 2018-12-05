@@ -1,12 +1,12 @@
-import * as React from 'react'
 import {
   observer,
-} from 'mobx-react'
+} from 'mobx-react';
+import * as React from 'react';
 import { SimpleCounterState } from './SimpleCounter.state';
 
 @observer
 export class SimpleCounter extends React.Component<{test?: number}> {
-  observableState = new SimpleCounterState()
+  observableState = new SimpleCounterState();
   render () {
     return (
       <div>
@@ -17,6 +17,6 @@ export class SimpleCounter extends React.Component<{test?: number}> {
         +1
         </button>
       </div>
-    )
+    );
   }
 }

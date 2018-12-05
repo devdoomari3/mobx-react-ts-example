@@ -1,11 +1,11 @@
 import {
-  observable, action,
-} from 'mobx'
+  action, observable,
+} from 'mobx';
 
 export class SimpleCounterState {
   @observable count: number = 0;
 
   @action addOne() {
-    this.count++
+    this.count += 1;
   }
 }
